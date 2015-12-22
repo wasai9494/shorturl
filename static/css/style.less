@@ -1,0 +1,64 @@
+@import "../../bower_components/bootstrap/less/variables.less";
+
+@body-padding: 70px;
+
+body {
+  padding-top: @body-padding; /* For navbar. */
+}
+
+.navbar-brand > img {
+  display: inline;
+  max-height: 100%;
+}
+
+.container.content {
+  margin-bottom: 20px;
+}
+
+/* For using anchored links with the fixed navbar. */
+.anchor {
+  display: block;
+  position: relative;
+  top: -(@body-padding);
+  height: 0;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.table {
+  table-layout: fixed;
+}
+
+.current-links-table .shortlink,
+.current-links-table .redirects-to,
+.link-stats-table .url {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.current-links-table .shortlink {
+  width: 250px;
+}
+
+.current-links-table .actions {
+  width: 150px;
+}
+
+.link-stats-table .datetime,
+.link-stats-table .clicks {
+  width: 100px;
+}
+
+/* For smaller screens, hide URL and unfix shortlink width. */
+@media (max-width: @screen-sm-max) {
+  .current-links-table .shortlink {
+    width: auto;
+  }
+
+  .current-links-table .redirects-to {
+    display: none;
+  }
+}
